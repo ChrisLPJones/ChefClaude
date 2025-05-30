@@ -21,6 +21,10 @@ body {
     color: #475467;
 }
 
+.skeleton-container{
+    margin-top: 48px;
+    line-height: 2;
+}
 .container ul {
     padding-left: 20px;
     margin: 0;
@@ -270,7 +274,7 @@ main > form > button:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 30rem;
-    height: 125px;
+    /* height: 125px; */
     text-align: center;
     font-size: 1.2rem;
     color: #444;

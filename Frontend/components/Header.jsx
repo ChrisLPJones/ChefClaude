@@ -36,9 +36,15 @@ export default function Header() {
                     {open && (
                         <div className="dropdown-container">
                             <div className="dropdown-panel">
-                                <h3 className="dropdown-title">Chef Claude Recipe Generator</h3>
-                                <p className="dropdown-subtext">Created by Christian LP Jones</p>
-                                <p className="dropdown-subinfo">Powered by Claude AI + Spoonacular API</p>
+                                <h3 className="dropdown-title">
+                                    Chef Claude Recipe Generator
+                                </h3>
+                                <p className="dropdown-subtext">
+                                    Created by Christian LP Jones
+                                </p>
+                                <p className="dropdown-subinfo">
+                                    Powered by Claude AI + Spoonacular API
+                                </p>
                                 <a
                                     href="https://github.com/chrislpjones"
                                     target="_blank"

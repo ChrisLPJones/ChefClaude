@@ -11,18 +11,17 @@ export default function Main() {
     const [ingredients, setIngredients] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [recipe, setRecipe] = React.useState(null);
-    const [recipeList, setRecipeList] = useState([])
+    const [recipeList, setRecipeList] = useState([]);
     const loadingSection = useRef(null);
     const inputRef = useRef(null);
     const getRecipeRef = useRef(null);
-
 
     // Ping api to wake from cold state
     useEffect(() => {
         async function pingApi() {
             try {
                 await axios.post(import.meta.env.VITE_API_ENDPOINT + "/api");
-            // eslint-disable-next-line no-unused-vars
+                // eslint-disable-next-line no-unused-vars
             } catch (error) {
                 // don't log anything to console
             }
@@ -33,22 +32,27 @@ export default function Main() {
     //Scroll window to recipe when loading recipe
     useEffect(() => {
         if (isLoading) {
-            getRecipeRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            getRecipeRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
         }
     }, [isLoading]);
 
     // Call API for recipe
     async function toggleRecipe(ingredientsList, recipeList) {
-        
-    setRecipe(null);
-    setIsLoading(true);
+        setRecipe(null);
+        setIsLoading(true);
 
-    const recipeText = await callClaudeAPI(ingredientsList, recipeList);
-    setRecipe(recipeText);
+        const recipeText = await callClaudeAPI(ingredientsList, recipeList);
+        setRecipe(recipeText);
 
-    // Save recipe title to list
-    setRecipeList((prev) => [...prev, recipeText.split('\n')[0].substring(2)]);
-    setIsLoading(false);
+        // Save recipe title to list
+        setRecipeList((prev) => [
+            ...prev,
+            recipeText.split("\n")[0].substring(2),
+        ]);
+        setIsLoading(false);
     }
 
     // Add ingredient

@@ -24,7 +24,8 @@
     "react-markdown": "^10.1.0",
     "react-markup": "^2.0.0",
     "react-select": "^5.10.1",
-    "react-spinners": "^0.15.0"
+    "react-spinners": "^0.15.0",
+    "react-to-print": "^3.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",

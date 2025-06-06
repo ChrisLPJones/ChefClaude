@@ -21,7 +21,7 @@ body {
     color: #475467;
 }
 
-.skeleton-container{
+.skeleton-container {
     margin-top: 48px;
     line-height: 2;
 }
@@ -86,7 +86,6 @@ header {
     margin-top: 0.75rem;
     z-index: 1000;
 }
-
 
 .dropdown-wrapper {
     position: absolute;
@@ -245,7 +244,7 @@ main > form > button:hover {
 }
 
 .get-recipe-container button:hover {
-    background: #d17557;
+    background: #a9533f;
 }
 
 /* Suggested Recipe */
@@ -310,7 +309,7 @@ main > form > button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #b33939;
+    background: #b84f4f;
     border: none;
     border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
@@ -346,4 +345,80 @@ main > form > button:hover {
 h2 {
     margin-top: 0;
     margin-bottom: 6px;
+}
+
+/* Print button */
+.print-button {
+    border: none;
+    border-radius: 6px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #b5654f;
+    color: #fafaf8;
+    padding: 9px 17px;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+    min-height: 38px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+    padding-top: 100;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.print-button:hover {
+    background-color: #a9533f;
+}
+
+.print-window {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.print-button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media print {
+    body {
+        background: none !important;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-sizing: border-box;
+    }
+
+    .print-wrapper {
+        margin: 0;
+        padding: 40px;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        /* Optional border for visual debugging */
+        /* border: 1px solid black; */
+        zoom: 1 !important;
+        transform: none !important;
+    }
+
+    .print-button {
+        display: none !important;
+    }
 }
